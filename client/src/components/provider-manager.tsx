@@ -295,32 +295,6 @@ export default function ProviderManager() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-foreground flex items-center">
-                  <div className="mr-2 h-5 w-5 text-primary">⚙</div>
-                  Procedimentos - Demais Clientes
-                </h3>
-              </div>
-
-              <ProcedureList 
-                providerId={selectedProviderId}
-                sinistroType={selectedSinistroType}
-                type="provider"
-              />
-
-              <Button 
-                className="w-full mt-4" 
-                onClick={handleAddProcedure}
-                data-testid="button-add-provider-procedure"
-              >
-                <Plus className="mr-2 h-4 w-4" />
-                Adicionar Procedimento
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="pt-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center">
                   <Star className="mr-2 h-5 w-5 text-amber-500" />
                   Procedimentos AON
                   {selectedSinistro && (
@@ -344,6 +318,32 @@ export default function ProviderManager() {
               >
                 <Plus className="mr-2 h-4 w-4" />
                 Adicionar Procedimento AON
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="pt-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-foreground flex items-center">
+                  <div className="mr-2 h-5 w-5 text-primary">⚙</div>
+                  Procedimentos - Demais Clientes
+                </h3>
+              </div>
+
+              <ProcedureList 
+                providerId={selectedProviderId}
+                sinistroType={selectedSinistroType}
+                type="provider"
+              />
+
+              <Button 
+                className="w-full mt-4" 
+                onClick={handleAddProcedure}
+                data-testid="button-add-provider-procedure"
+              >
+                <Plus className="mr-2 h-4 w-4" />
+                Adicionar Procedimento
               </Button>
             </CardContent>
           </Card>
