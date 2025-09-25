@@ -36,6 +36,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/clients", async (req, res) => {
     try {
       const data = insertClientSchema.parse(req.body);
+      if (!data.email) {
+        data.email = `example_${Date.now()}@example.com`;
+      }
       const client = await storage.createClient(data);
       res.status(201).json(client);
     } catch (error) {
